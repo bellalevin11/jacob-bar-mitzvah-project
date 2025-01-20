@@ -145,6 +145,14 @@ footer {
         gap: 20px; /* Adds spacing between sections */
     }
 
+    .first img {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        display: block;
+    }
+
     header {
         padding: 20px 5px;
         font-size: .8rem;
