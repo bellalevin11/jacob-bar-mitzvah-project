@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background-color: #006cd8;
+    background-color: #0409B1;
     color: white;
     padding: 20px 5px;
     text-align: center;
@@ -21,6 +21,8 @@ header {
     font-weight: 700;
     font-style: normal;
     font-size: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+
 }
 
 
@@ -31,6 +33,19 @@ header {
     gap: 2rem;
 }
 
+.bottom {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-family: "Roboto Condensed", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
 .container img {
     width: 100%;
     border-radius: 10px;
@@ -38,14 +53,20 @@ header {
 
 .pics {
     display: flex;
-    gap: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: space-evenly; 
+    gap: 1rem; 
+    margin-top: 1rem;
+    margin-bottom: 1rem;    
 }
 
 .pics img {
-    max-width: 300px;
+    flex: 1 1 calc(33.333% - 1rem); 
+    height: 350px;
+    object-fit: cover; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
+
 
 .blurb {
     font-size: 1.2rem;
@@ -59,14 +80,38 @@ header {
     padding: 20px;
 }
 
+
 .blurb p {
     margin-bottom: 15px; 
 }
+
+.first p {
+    background-color: rgba(255, 255, 255, 0.57);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(75, 75, 75);
+}
+
+.video-container {
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+video {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    width: 80%;
+    height: auto;
+}
+
 .donate-link {
     display: block; 
     margin: 30px auto; 
     padding: 20px 40px; 
-    background-color: #0073e6;
+    background-color: #0409B1;
     color: white; 
     text-align: center; 
     text-decoration: none;
@@ -80,14 +125,69 @@ header {
 
 
 .donate-link:hover {
-    background-color: #005bb5; 
+    background-color: #030776; 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); 
 }
+
 
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #00274d; /* Dark blue */
+    background-color: #0409B1;
     color: white;
     margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        gap: 20px; /* Adds spacing between sections */
+    }
+
+    header {
+        padding: 20px 5px;
+        font-size: .8rem;
+    }
+
+    .first {
+        order: 1; /* Move the picture and donate button to the top */
+    }
+
+    .blurb {
+        order: 2; /* Move the blurb below the picture and donate button */
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .video-container {
+        order: 3; /* Keep the video at the bottom */
+    }
+
+    video {
+        max-width: 100%; /* Restricts the video to the width of its container */
+        height: auto; /* Maintains the aspect ratio */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+    }
+
+    .pics {
+        flex-wrap: wrap; /* Ensure pictures wrap properly on smaller screens */
+        justify-content: center; /* Center pictures on smaller screens */
+    }
+
+    .pics img {
+        max-width: 100%; /* Make pictures responsive */
+        margin-bottom: 10px; /* Add spacing between pictures */
+        height: auto;
+    }
+
+    .donate-link {
+        font-size: 1.2em; /* Slightly smaller button on mobile */
+        padding: 15px 30px; /* Adjust button size for smaller screens */
+    }
+
+    .bottom {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
 }
